@@ -7,3 +7,8 @@
     flex-grow: 1;
     justify-content: flex-end;
 }
+
+.logo {
+    max-width: 10em;
+    margin-top: 0;
+}
