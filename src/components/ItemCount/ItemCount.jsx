@@ -9,9 +9,9 @@ const restar = () => (contador > valInicial) && setContador (contador -1)
 
 return (
  <>
-     <button className = "btn btn-dark" onClick = {() => sumar()}>+</button>
+    <button type="button" class="btn btn-outline-warning" onClick = {() => sumar()}>+</button>
      {contador}
-     <button className = "btn btn-dark" onClick = {() => restar()}>-</button>
+     <button type="button" class="btn btn-outline-warning" onClick = {() => restar()}>-</button>
 
  </>
     );

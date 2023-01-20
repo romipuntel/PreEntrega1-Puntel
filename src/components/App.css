@@ -1,3 +1,9 @@
-.container-fluir {
-    background-color: #FEFDF2;
+.container-fluid {
+    background-color: #f9f7de;
+}
+
+#navbarNavDropdown {
+    flex-basis: 100%;
+    flex-grow: 1;
+    justify-content: flex-end;
 }
