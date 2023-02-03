@@ -12,3 +12,57 @@
     max-width: 10em;
     margin-top: 0;
 }
+
+.row {
+    gap: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.card {
+    height: 300px;
+    width: 300px;
+    border: none;
+    margin: 0 auto;
+}
+
+.card-price {
+    text-align: center;
+    font-size: 1em;
+}
+
+.card-image {
+    align-self: center;
+    width: 17em;
+    margin-top: 3em;
+    margin-left: 2em;
+}
+
+.card-name {
+    text-align: center;
+    color: #4C4A59;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.card-button {
+    align-self: center;
+    margin-top: 1em;
+}
+
+.agregar {
+    max-width: 3em;
+    align-self: center;
+}
+
+.compra {
+    margin-top: 3em;
+}
