@@ -24,7 +24,7 @@
 }
 
 .card {
-    height: 300px;
+
     width: 300px;
     border: none;
     margin: 0 auto;
@@ -36,10 +36,12 @@
 }
 
 .card-image {
+    display: flex;
+    justify-content: center;
     align-self: center;
     width: 17em;
     margin-top: 3em;
-    margin-left: 2em;
+
 }
 
 .card-name {
@@ -60,9 +62,23 @@
 
 .agregar {
     max-width: 3em;
-    align-self: center;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+
+.container {
+    margin-top: 1em;
 }
 
 .compra {
-    margin-top: 3em;
+    margin-top: 2em;
+
+}
+
+.comprar {
+    margin-left: 1em;
+}
+
+.cartCard {
+    max-width: 800px;
 }

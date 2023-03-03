@@ -1,20 +1,32 @@
 import { ItemCount } from "../ItemCount/ItemCount";
+import { useCarritoContext } from "../../context/CarritoContext";
 
 export const ItemDetail = ({ item }) => {
+    const { addItem } = useCarritoContext()
+
+    const onAdd = (cantidad) => {
+        addItem(item, cantidad)
+    }
+
     return (
-        <div className="card" style={{ width: '12rem' }}>
-            <img src={`../assets/${item.imagen}`} className="img-fluid rounder-start card-image" alt={`imagen de ${item.nombre}`} />
-            < div className="card" id="card${producto.id}">
-                <div className="card-name">Nombre: {item.nombre}</div>
-                <div className="card-price">Precio:{item.precio}</div>
-                <div className='card-text'>Stock: {item.stock}</div>
-                <ItemCount valInicial={1} stock={item.stock} />
-                <button type="button" class="btn btn-outline-primary compra">Comprar</button>
+
+        <div className="card" style={{ width: '19rem' }}>
+            <img src={item.imagen} className="img-fluid rounder-start card-image" alt={`Imagen de ${item.nombre}`} />
+            <div className="card-body">
+                <h5 className="card-title">{item.nombre}</h5>
             </div>
+            <ul className="list-group list-group-flush">
+                <li className="list-group-item">Precio:u$s {item.precio}</li>
+                <li className="list-group-item">Stock: {item.stock}</li>
+            </ul>
+            <div className="card-body">
+                <ItemCount valInicial={1} stock={item.stock} onAdd={onAdd} />
+                <button type="button" class="btn btn-outline-primary compra">Finalizar Compra</button>
+            </div>
+
         </div>
 
 
     );
 }
 
-export default ItemDetail;
