@@ -45,7 +45,7 @@ export const Checkout = () => {
                 ?
                 <>
                     <h2>No posee productos en el carrito</h2>
-                    <Link className="nav-link" to={'/'}><button className="btn btn-dark">Continuar comprando</button></Link>
+                    <Link className="nav-link" to={'/'}><button className="btn btn-outline-primary">Continuar comprando</button></Link>
                 </>
                 :
                 <div className="container" style={{ marginTop: "20px" }}>

@@ -7,14 +7,13 @@ export const Contacto = () => {
     let navigate = useNavigate()
     const consultarFormulario = (e) => {
         e.preventDefault()
-        console.log(datosFormulario.current)
         const datForm = new FormData(datosFormulario.current)
         const contacto = Object.fromEntries(datForm)
-        console.log(contacto)
         e.target.reset()
         toast.success("Consulta enviada")
         navigate("/")
     }
+
     return (
         <div className="container" >
             <form onSubmit={consultarFormulario} ref={datosFormulario}>
