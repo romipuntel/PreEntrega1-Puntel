@@ -21,10 +21,10 @@ export const ItemDetail = ({ item }) => {
             </ul>
             <div className="card-body">
                 <ItemCount valInicial={1} stock={item.stock} onAdd={onAdd} />
-                <button type="button" class="btn btn-outline-primary compra">Finalizar Compra</button>
+                <button type="button" class="btn btn-outline-primary compra">Finalizar Compra </button>
             </div>
 
-        </div>
+        </div >
 
 
     );

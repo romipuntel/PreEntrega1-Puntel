@@ -7,7 +7,7 @@ export const Item = ({ item }) => {
       <div className="card-name">{item.nombre}</div>
       <div className="card-price"> u$s{item.precio}</div>
       <div className="card-button">
-        <button type="button" class="btn btn-outline-primary"><Link className="nav-link" to={`/item/${item.nombre}`}>Ver producto</Link></button>
+        <button type="button" class="btn btn-outline-primary"><Link className="nav-link" to={`/item/${item.id}`}>Ver producto</Link></button>
       </div>
     </div>
 

@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, addDoc, getDoc, getDocs, updateDoc } from 'firebase/firestore'
+import { Await } from "react-router-dom";
 
 const firebaseConfig = {
     apiKey: "AIzaSyD-t43bFxC_HU_9tCtiYiW2-ikt0FWAH7k",
@@ -49,3 +50,18 @@ export const updateProducto = async (id, info) => {
     await updateDoc(doc(db, "productos", id), info)
 }
 
+export const createOrdenCompra = async (cliente, productos, precioTotal, fecha) => {
+    const ordenCompra = await addDoc(collection(db, "ordenCompra"), {
+        datosCliente: cliente,
+        productos: productos,
+        precioTotal: precioTotal,
+        fecha: fecha
+    })
+    return ordenCompra
+}
+
+export const getOrdenCompra = async (id) => {
+    const ordenCompra = await getDoc(doc(db, "ordenCompra", id))
+    const oCompra = { ...ordenCompra.data(), id: ordenCompra.id }
+    return oCompra
+}

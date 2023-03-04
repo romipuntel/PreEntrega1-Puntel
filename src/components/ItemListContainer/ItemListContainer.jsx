@@ -13,17 +13,17 @@ export const ItemListContainer = () => {
                 .then(items => {
                     const products = items.filter(prod => prod.stock > 0).filter(prod => prod.idCategoria === parseInt(idCategoria))
                     const productsList = <ItemList products={products} plantilla={'item'} />
-                    console.log(productsList)
                     setProductos(productsList)
                 })
         } else {
             getProductos()
                 .then(items => {
                     const products = items.filter(prod => prod.stock > 0)
-                    const productsList = <ItemList products={products} plantilla={'item'} />
+                    const productsList = <ItemList products={products} plantilla={'item'} /> //Array de productos en JSX
                     setProductos(productsList)
                 })
         }
+
     }, [idCategoria])
     return (
         <div className='row cardProductos'>

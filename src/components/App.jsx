@@ -7,9 +7,12 @@ import { ItemListContainer } from './ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './ItemDetailContainer/ItemDetailContainer';
 import { Cart } from './Cart/Cart';
 import { Contacto } from './Contacto/Contacto';
+import { Checkout } from './Checkout /Checkout';
 import { CarritoProvider } from '../context/CarritoContext';
-function App() {
+import { createOrdenCompra } from '../firebase/firebase';
 
+function App() {
+  
   return (
     <>
       <BrowserRouter>
@@ -17,10 +20,11 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<ItemListContainer />} />
-            <Route path='/item/:nombre' element={<ItemDetailContainer />} />
+            <Route path='/item/:id' element={<ItemDetailContainer />} />
             < Route path='/category/:idCategoria' element={<ItemListContainer />} />
             <Route path='/contacto' element={<Contacto />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='./checkout' element={<Checkout />} />
           </Routes>
           <ToastContainer />
         </CarritoProvider>
