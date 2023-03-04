@@ -15,20 +15,26 @@ export const Checkout = () => {
         const datForm = new FormData(datosFormulario.current)
         const cliente = Object.fromEntries(datForm)
         const aux = [...carrito]
-
-        aux.forEach(prodCarrito => {
-            getProducto(prodCarrito.id).then(prodBDD => {
-                prodBDD.stock -= prodCarrito.cant
-                updateProducto(prodCarrito.id, prodBDD)
+        if (cliente.nombre.trim() === '' && cliente.email.trim() === '' && cliente.repEmail.trim() === '' && cliente.direccion.trim() === '' && cliente.celular.trim() === '') {
+            toast.warning('Todos los campos son requeridos')
+        } else if (cliente.email !== cliente.repEmail) {
+            toast.warning('Los mails debes ser iguales')
+        } else {
+            aux.forEach(prodCarrito => {
+                getProducto(prodCarrito.id).then(prodBDD => {
+                    prodBDD.stock -= prodCarrito.cant
+                    updateProducto(prodCarrito.id, prodBDD)
+                })
             })
-        })
 
-        createOrdenCompra(cliente, aux, totalPrice(), new Date().toISOString()).then(ordenCompra => {
-            toast.success(`Su orden de compra ${ordenCompra.id}fue realizada con exito, Muchas gracias`)
-            emptyCart()
-            e.target.reset()
-            navigate("/")
-        })
+            createOrdenCompra(cliente, aux, totalPrice(), new Date().toISOString()).then(ordenCompra => {
+                toast.success(`Su orden de compra ${ordenCompra.id}fue realizada con exito, Muchas gracias`)
+                emptyCart()
+                e.target.reset()
+                navigate("/")
+            })
+        }
+
 
     }
 
@@ -74,5 +80,3 @@ export const Checkout = () => {
 
     )
 }
-
-
