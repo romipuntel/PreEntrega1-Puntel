@@ -3,7 +3,7 @@ import { getFirestore, collection, doc, addDoc, getDoc, getDocs, updateDoc } fro
 import { Await } from "react-router-dom";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD-t43bFxC_HU_9tCtiYiW2-ikt0FWAH7k",
+    apiKey: process.env.APY_KEY,
     authDomain: "mendoza-wine--puntel.firebaseapp.com",
     projectId: "mendoza-wine--puntel",
     storageBucket: "mendoza-wine--puntel.appspot.com",
